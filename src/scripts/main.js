@@ -24,20 +24,21 @@ function createTree(element, data) {
   // WRITE YOUR CODE HERE
   if (Object.keys(data).length === 0) {
     return;
-  };
+  }
 
   const list = document.createElement('ul');
 
   for (const key in data) {
     const li = document.createElement('li');
+
     li.textContent = key;
     list.append(li);
 
-    if (Object.data[key].length !== 0) {
-      createTree(li. data[key]);
+    if (Object.keys(data[key]).length > 0) {
+      createTree(li, data[key]);
     }
-  };
-   element.append(list);
+  }
+  element.append(list);
 }
 
 createTree(tree, food);
